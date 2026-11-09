@@ -1,11 +1,11 @@
 # Solidity MEV Bot Scam Detector & "MEV Bot for Sale" Reality Check (2026)
 
-> **Production Flashbots Execution & Non-Custodial Ethereum Sniper:** [**MEV DAO (`mevdao.org`)**](https://mevdao.org)
+> Maintained by [MEV DAO](https://mevdao.org).
 >
 > **Deep-Dive Security Guides:**
 > - [**The YouTube MEV Bot Scam: How the "Remix Contract" Drains Your ETH**](https://mevdao.org/blog/the-youtube-mev-bot-scam-how-the-remix-contract-drains-your-eth)
 > - [**MEV Bot for Sale? What's Real, What's a Scam, and What It Should Cost**](https://mevdao.org/blog/mev-bot-for-sale-what-s-real-what-s-a-scam-and-what-it-should-cost)
-> - [**Why Public-Mempool MEV Bots Lose Money in 2026 (And What Works Instead)**](https://mevdao.org/blog/why-public-mempool-mev-bots-lose-money-in-2026-and-what-works-instead)
+> - [**Mempool Sniper Bots: Pending-Tx Snipes vs Private Bundles**](https://mevdao.org/blog/mempool-sniper-bot-pending-tx-snipes-vs-private-bundles)
 
 ---
 
@@ -72,7 +72,6 @@ If you are evaluating a commercial trading bot, an open-source repo, or a freela
 | **Telegram/Discord "Pre-configured Arbitrage Bot" (.exe / .zip / obfuscated JS)** | $200 – $2,500 | **99% Scam / Key-Stealer** | Usually steals your `.env` private key or sells a dead public-mempool script that loses every race on gas |
 | **"Guaranteed 1–5% Daily Return" MEV Pool / Cloud Bot** | Deposit-based | **100% Ponzi / Drainer** | No genuine searcher shares risk-free alpha with retail depositors; anyone with a profitable zero-risk arb scales it with flash loans ($0 capital required) |
 | **Custodial Telegram Sniper Bots (Banana Gun, Maestro, etc.)** | **1% of every buy + 1% of every sell** | **Real, but Expensive & Custodial** | A $10,000 round-trip trade costs **$200 in bot fees** before gas, and requires storing keys in a Telegram bot database |
-| **Non-Custodial Browser Flashbots Sniper ([MEV DAO](https://mevdao.org))** | **$4.90 flat fee** per executed trade | **Real Production Tool** | Routes transactions privately through Flashbots builders (`eth_sendBundle`), reverts for $0 if preconditions fail, and keeps keys non-custodial in your browser |
 | **Open-Source Reference Searcher Stack ([`mevdao-org` GitHub](https://github.com/mevdao-org))** | **Free / MIT Open Source** | **Real Educational & Starter Code** | Working TypeScript + Foundry/Anvil bundle simulators, sniper scripts, and wallet rescue tools |
 
 ---
@@ -98,12 +97,12 @@ Instead of deploying a single Solidity file in Remix, a real Ethereum MEV / snip
 If you pasted your private key into a fake bot script, signed a malicious `0xef0100` EIP-7702 delegation, or approved a drainer contract:
 
 1. **Check & Revoke EIP-7702 Delegations:**
-   - Guide: [**How to Check and Remove a Malicious EIP-7702 Delegation**](https://mevdao.org/blog/how-to-check-and-remove-a-malicious-eip-7702-delegation-from-your-ethereum-wallet)
+   - Guide: [**How to Check and Remove a Malicious EIP-7702 Delegation**](https://mevdao.org/blog/how-to-check-and-remove-a-malicious-eip-7702-delegation)
    - Tool: [`mevdao-org/eip-7702-delegation-checker-revoker`](https://github.com/mevdao-org/eip-7702-delegation-checker-revoker)
 2. **Revoke ERC-20 & Permit2 Approvals:**
-   - Guide: [**How to Revoke Token Approvals and Permit2 Signatures Before a Drainer Strikes**](https://mevdao.org/blog/how-to-revoke-token-approvals-and-permit2-signatures-before-a-drainer-strikes)
+   - Guide: [**How to Revoke Token Approvals and Permit2 Signatures**](https://mevdao.org/blog/how-to-revoke-token-approvals-and-permit2-signatures)
 3. **Rescue Stranded Tokens From a Compromised Private Key (Atomic Flashbots Bundle):**
-   - Guide: [**Sweeper Bot on My Wallet: How to Rescue Tokens From a Compromised Ethereum Address**](https://mevdao.org/blog/sweeper-bot-on-my-wallet-how-to-rescue-tokens-from-a-compromised-ethereum-address)
+   - Guide: [**Sweeper Bot Rescue Service: Rescue Tokens From a Compromised Wallet**](https://mevdao.org/blog/rescue-tokens-from-a-compromised-wallet-sweeper-bot-rescue-service)
    - Tool: [`mevdao-org/compromised-wallet-sweeper-rescue`](https://github.com/mevdao-org/compromised-wallet-sweeper-rescue)
 
 ---
@@ -115,9 +114,6 @@ No. Scammers frequently title their YouTube videos *"How I Built a $1,000/day Ch
 
 ### Can I recover ETH sent to a YouTube Remix MEV bot contract?
 Once `start()` or `withdrawal()` transfers your ETH to the scammer's EOA, on-chain Ethereum transfers are irreversible. However, if your ETH is still sitting inside the deployed contract and `start()` reverted or hasn't been called yet, DO NOT call `start()` or `withdrawal()`—inspect the verified bytecode first to see if any function returns funds to `msg.sender`. See our full diagnostic steps in [**The YouTube MEV Bot Scam: How the "Remix Contract" Drains Your ETH**](https://mevdao.org/blog/the-youtube-mev-bot-scam-how-the-remix-contract-drains-your-eth).
-
-### Where can I use a real Flashbots sniper without writing code?
-Use [**MEV DAO (`mevdao.org`)**](https://mevdao.org)—a browser-based, non-custodial Ethereum Flashbots sniper and bundle executor with a flat **$4.90 fee** per executed trade (compared to 1% per trade on custodial Telegram bots).
 
 ---
 
