@@ -117,6 +117,13 @@ Once `start()` or `withdrawal()` transfers your ETH to the scammer's EOA, on-cha
 
 ---
 
+## Further reading
+
+- [Five minute check on a free YouTube MEV bot](https://mevdao-org.github.io/free-mev-bot-video-check.html), the short version of this repo's checks from our field notes.
+- [Best ETH sniper bots in 2026: fees, speed and key custody](https://mevdao.org/blog/best-eth-sniper-bot-in-2026-fees-speed-key-custody), if what you actually wanted was a real sniper.
+- [Honeypot tokens: how to spot one before you buy](https://mevdao.org/blog/honeypot-tokens-how-to-spot-one-before-you-buy).
+- [Crypto recovery scams: how to spot fake wallet recovery services](https://mevdao.org/blog/crypto-recovery-scams-how-to-spot-fake-wallet-recovery-services), for anyone who lost funds to a drainer and is now getting "recovery" DMs.
+
 ## License
 
 MIT © [MEV DAO](https://mevdao.org)
